@@ -1,0 +1,20 @@
+<div class="mdl-grid max-width">
+
+  <div class="mdl-cell mdl-cell--8-col mdl-shadow--4dp">
+    <img *ngFor="let i of arr(num).fill(1);"
+         class="img-padding mdl-shadow--2dp" [src]="image">
+  </div>
+
+  <div class="mdl-cell mdl-cell--4-col mdl-shadow--4dp">
+    <ul class="mdl-list">
+      <li *ngFor="let item of menu;"
+          class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">
+              {{item.menuName}}
+            </span>
+        <i class="material-icons">{{item.menuIcon}}</i>
+      </li>
+    </ul>
+  </div>
+
+</div>
