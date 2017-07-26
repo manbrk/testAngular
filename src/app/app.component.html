@@ -2,18 +2,7 @@
   locked at the top -->
 <div class="mdl-layout mdl-js-layout">
 
-  <header class="mdl-layout__header mdl-layout__header--scroll mdl-shadow--4dp">
-    <div class="mdl-layout__header-row">
-      <!-- Title -->
-      <span class="mdl-layout-title">{{ title }}</span>
-      <!-- Add spacer, to align navigation to the right -->
-      <div class="mdl-layout-spacer"></div>
-      <!-- Navigation -->
-      <nav class="mdl-navigation">
-        <a class="mdl-navigation__link" href=""><i class="material-icons">turned_in_not</i></a>
-      </nav>
-    </div>
-  </header>
+  <app-header></app-header>
 
   <div class="mdl-layout__drawer">
     <span class="mdl-layout-title">{{ title }}</span>
@@ -48,14 +37,5 @@
     </div>
   </main>
 
-  <footer class="mdl-mini-footer">
-    <div class="mdl-mini-footer__left-section">
-      <div class="mdl-logo">{{ title }}</div>
-      <ul class="mdl-mini-footer__link-list">
-        <li><a href="#">Help</a></li>
-        <li><a href="#">Stay Beauty</a></li>
-      </ul>
-    </div>
-  </footer>
-
+  <app-footer></app-footer>
 </div>
