@@ -2,7 +2,7 @@
   locked at the top -->
 <div class="mdl-layout mdl-js-layout">
 
-  <app-header></app-header>
+  <app-header [title]="title"></app-header>
 
   <div class="mdl-layout__drawer">
     <span class="mdl-layout-title">{{ title }}</span>
@@ -18,5 +18,5 @@
     <app-first-task></app-first-task>
   </main>
 
-  <app-footer></app-footer>
+  <app-footer [title]="title"></app-footer>
 </div>
