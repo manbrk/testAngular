@@ -1,9 +1,11 @@
 <header class="mdl-layout__header mdl-layout__header--scroll mdl-shadow--4dp">
   <div class="mdl-layout__header-row">
     <!-- Title -->
-    <span class="mdl-layout-title">{{ title }}</span>
+    <span class="mdl-layout-title">
+      <a routerLink="/">{{ title }}</a>
+    </span>
     <a class="mdl-navigation__link" routerLink="/first">Markup Task</a>
-    <a class="mdl-navigation__link" routerLink="/list">List Task</a>
+    <a class="mdl-navigation__link" [routerLink]="['/list']">List Task</a>
     <!-- Add spacer, to align navigation to the right -->
     <div class="mdl-layout-spacer"></div>
     <!-- Navigation -->

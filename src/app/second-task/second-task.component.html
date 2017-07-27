@@ -1,17 +1,23 @@
 <div class="mdl-grid max-width">
-  <input class="mdl-textfield__input"
-         #itemName type="text">
 
-  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
-          (click)="add(itemName.value)">add</button>
-  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
-          (click)="clearStorage()">clear</button>
 
-  <ul>
-    <li *ngFor="let item of list">
-      id: {{item.id}} - {{ item.name }} - <a href="#">edit</a> - <a href="#">remove</a>
-    </li>
-  </ul>
+    <div class="mdl-cell mdl-cell--8-col">
+      <input class="mdl-textfield__input"
+             #itemName type="text">
+    </div>
 
+    <div class="mdl-cell mdl-cell--4-col">
+      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
+              (click)="add(itemName.value)">add</button>
+      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
+              (click)="clearStorage()">clear</button>
+    </div>
+
+    <ul class="mdl-list">
+      <li class="mdl-list__item"
+          *ngFor="let item of list">
+        id: {{item.id}} - {{ item.name }} - <a [routerLink]="['/list/edit', item.id]">edit</a> - <a href="#">remove</a>
+      </li>
+    </ul>
 </div>
 

@@ -22,6 +22,15 @@ export class StorageService {
     this.counterId += 1;
   }
 
+  getItem(id: number) {
+    const item = this.list.find(
+      (i) => {
+        return i.id === id;
+      }
+    );
+    return item;
+  }
+
 
   // id: any = 0;
   // listItems = [];
