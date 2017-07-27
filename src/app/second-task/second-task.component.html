@@ -1,0 +1,17 @@
+<div class="mdl-grid max-width">
+  <input class="mdl-textfield__input"
+         #itemName type="text">
+
+  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
+          (click)="add(itemName.value)">add</button>
+  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
+          (click)="clearStorage()">clear</button>
+
+  <ul>
+    <li *ngFor="let item of list">
+      id: {{item.id}} - {{ item.name }} - <a href="#">edit</a> - <a href="#">remove</a>
+    </li>
+  </ul>
+
+</div>
+
