@@ -9,15 +9,23 @@
     <div class="mdl-cell mdl-cell--4-col">
       <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
               (click)="add(itemName.value)">add</button>
-      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
-              (click)="clearStorage()">clear</button>
+      <!--<button class="mdl-button mdl-js-button mdl-button&#45;&#45;raised mdl-js-ripple-effect"-->
+              <!--(click)="clearStorage()">clear</button>-->
     </div>
 
-    <ul class="mdl-list">
+
+  <div class="mdl-cell mdl-cell--6-col">
+  <ul class="mdl-list">
       <li class="mdl-list__item"
           *ngFor="let item of list">
         id: {{item.id}} - {{ item.name }} - <a [routerLink]="['/list/edit', item.id]">edit</a> - <a href="#">remove</a>
       </li>
     </ul>
-</div>
+  </div>
+  <div class="mdl-cell mdl-cell--6-col">
+    <router-outlet></router-outlet>
+  </div>
+
+
+  </div>
 
