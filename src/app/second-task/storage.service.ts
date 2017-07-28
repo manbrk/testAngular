@@ -38,6 +38,10 @@ export class StorageService {
     });
   }
 
+  removeItem(index: number) {
+    this.list.splice(index, 1);
+  }
+
   getList() {
     return this.list;
   }
