@@ -1,7 +1,16 @@
 <div class="mdl-grid max-width">
-    <label id="name">Item Name: {{itemName}}</label>
-    <input class="mdl-textfield__input" type="text">
-    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">save</button>
-    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
+  <div *ngIf="editMode">
+    <label id="name">Item Name: {{item.name}}</label>
+  </div>
+
+  <input class="mdl-textfield__input" type="text" #itemName>
+
+  <button *ngIf="editMode" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
+            (click)="onSaveEdit(itemName.value)">save</button>
+
+  <button *ngIf="!editMode" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
+            (click)="onSaveNew(itemName.value)">add</button>
+
+  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
             (click)="goBackButton()">back</button>
 </div>

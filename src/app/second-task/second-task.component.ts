@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {StorageService} from './storage.service';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-second-task',
@@ -9,15 +10,25 @@ import {StorageService} from './storage.service';
 export class SecondTaskComponent implements OnInit {
   list: {id: number, name: string}[] = [];
 
-  constructor(private storageService: StorageService) {
+  constructor(private storageService: StorageService,
+              private router: Router,
+              private route: ActivatedRoute) {
   }
 
   ngOnInit() {
-    this.list = this.storageService.list;
+    this.list = this.storageService.getList();
   }
 
   add(item: string) {
     this.storageService.addItem(item);
   }
+
+  onNew() {
+    this.router.navigate(['add'], {relativeTo: this.route});
+  }
+
+  // onEdit() {
+  //   this.router.navigate(['edit'], {relativeTo: this.route});
+  // }
 
 }

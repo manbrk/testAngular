@@ -31,6 +31,17 @@ export class StorageService {
     return item;
   }
 
+  editItem(id: number, name: string) {
+    this.list.push({
+      id: id,
+      name: name
+    });
+  }
+
+  getList() {
+    return this.list;
+  }
+
 
   // id: any = 0;
   // listItems = [];
