@@ -21,10 +21,11 @@ export class EditListComponent implements OnInit {
       .subscribe(
         (params: Params) => {
           this.id = +params['id'];
-          console.log(this.id);
+          console.log(params);
           this.editMode = params['id'] != null;
           console.log(this.editMode);
           this.item = this.storageService.getItem(this.id);
+          console.log('edit-list component new id: ' + this.id);
         }
       );
 
@@ -40,10 +41,12 @@ export class EditListComponent implements OnInit {
   onSaveEdit(itemName: string) {
     this.storageService.editItem(this.id, itemName);
     this.router.navigate(['/list']);
+    console.log('(edit-list) save _edit_ id: ' + this.id);
   }
 
   onSaveNew (itemName: string) {
     this.storageService.addItem(itemName);
     this.router.navigate(['/list']);
+    console.log('(edit-list) save _new_ id: ' + this.id);
   }
 }

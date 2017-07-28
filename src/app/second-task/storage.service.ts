@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class StorageService {
-  counterId = 2;
   list = [
     {
       id: 0,
@@ -14,12 +13,19 @@ export class StorageService {
     },
   ];
 
+  uniqueId() {
+    if (this.list.length === 0) {
+      return 0;
+    }
+    return Math.max.apply(Math, this.list.map(list => list.id))
+  }
+
   addItem(name: string) {
     this.list.push({
-      id: this.counterId,
+      id: this.uniqueId() + 1,
       name: name
     });
-    this.counterId += 1;
+    // console.log('id ' + this.uniqueId() + 1);
   }
 
   getItem(id: number) {
@@ -31,15 +37,16 @@ export class StorageService {
     return item;
   }
 
-  editItem(id: number, name: string) {
-    this.list.push({
+  editItem (id: number, name: string) {
+    this.list[id] = {
       id: id,
       name: name
-    });
+    }
   }
 
-  removeItem(index: number) {
-    this.list.splice(index, 1);
+  removeItem(id: number) {
+    console.log(id, this.list[id]);
+    this.list.splice(id, 1);
   }
 
   getList() {
