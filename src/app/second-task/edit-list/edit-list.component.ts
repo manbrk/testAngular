@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {StorageService} from '../storage.service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-edit-list',
@@ -12,12 +12,17 @@ export class EditListComponent implements OnInit {
   itemName: string;
 
   constructor(private storageService: StorageService,
-              private route: ActivatedRoute) { }
+              private route: ActivatedRoute,
+              private router: Router) { }
 
   ngOnInit() {
     const id = +this.route.snapshot.params['id'];
     this.item = this.storageService.getItem(id);
     this.itemName = this.item.name;
+  }
+
+  goBackButton() {
+    this.router.navigate(['/list']);
   }
 
 }

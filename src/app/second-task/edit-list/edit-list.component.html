@@ -1,2 +1,7 @@
-<label id="name">Item Name: {{itemName}}</label>
-<!--<input type="text" [(ngModel)]="itemName">-->
+<div class="mdl-grid max-width">
+    <label id="name">Item Name: {{itemName}}</label>
+    <input class="mdl-textfield__input" type="text">
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">save</button>
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
+            (click)="goBackButton()">back</button>
+</div>
