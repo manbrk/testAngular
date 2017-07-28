@@ -19,10 +19,6 @@ export class SecondTaskComponent implements OnInit {
     this.list = this.storageService.getList();
   }
 
-  add(item: string) {
-    this.storageService.addItem(item);
-  }
-
   onNew() {
     this.router.navigate(['add'], {relativeTo: this.route});
   }
