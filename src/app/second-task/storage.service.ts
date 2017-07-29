@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class StorageService {
+  generatedId: number;
   list = [
     {
       id: 0,
@@ -17,15 +18,17 @@ export class StorageService {
     if (this.list.length === 0) {
       return 0;
     }
-    return Math.max.apply(Math, this.list.map(list => list.id))
+    this.generatedId = Math.max.apply(Math, this.list.map(list => list.id)) + 1;
+    console.log('new uniqueId is ' + this.generatedId);
+    return this.generatedId;
   }
+  // return 'id' + Math.random().toString(16).slice(2)
 
   addItem(name: string) {
     this.list.push({
-      id: this.uniqueId() + 1,
+      id: this.uniqueId(),
       name: name
     });
-    // console.log('id ' + this.uniqueId() + 1);
   }
 
   getItem(id: number) {
@@ -45,8 +48,11 @@ export class StorageService {
   }
 
   removeItem(id: number) {
-    console.log(id, this.list[id]);
-    this.list.splice(id, 1);
+    for (let i = 0; i < this.list.length; i++) {
+      if (this.list[i].id === id ) {
+        this.list.splice(i, 1);
+      }
+    }
   }
 
   getList() {

@@ -3,13 +3,17 @@
   <div class="mdl-cell mdl-cell--6-col">
     <ul class="mdl-list">
       <li class="mdl-list__item"
-          *ngFor="let item of list;"
-          (click)="onDebug(item.id)">
+          *ngFor="let item of list; let i = index"
+          (click)="onDebug(item.id, i)">
         id: {{item.id}} - {{ item.name }} - <a [routerLink]="['/list/edit', item.id]">edit</a> -
         <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
                 (click)="onRemove(item.id)">remove</button>
       </li>
     </ul>
+
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
+            (click)="getList()">getList</button>
+
   </div>
 
   <div class="mdl-cell mdl-cell--6-col">

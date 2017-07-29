@@ -27,9 +27,16 @@ export class SecondTaskComponent implements OnInit {
     this.storageService.removeItem(id);
   }
 
-  onDebug(item) {
-    console.log('item_id: ' + item)
+  onDebug(item, i) {
+    console.log('(onClick) on LI item_id: ' + item + ' (onClick) on Index: ' + i)
   }
+
+  getList() {
+    console.log(this.list.map(list => list.id));
+    console.log(this.list.map(list => list.name));
+    console.log(this.list);
+  }
+
   // onEdit() {
   //   this.router.navigate(['edit'], {relativeTo: this.route});
   // }

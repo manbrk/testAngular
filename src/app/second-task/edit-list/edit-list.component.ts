@@ -25,7 +25,7 @@ export class EditListComponent implements OnInit {
           this.editMode = params['id'] != null;
           console.log(this.editMode);
           this.item = this.storageService.getItem(this.id);
-          console.log('edit-list component new id: ' + this.id);
+          console.log('edit-list getItem(): id: ' + this.id);
         }
       );
 
