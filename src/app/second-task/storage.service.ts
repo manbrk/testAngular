@@ -32,27 +32,15 @@ export class StorageService {
   }
 
   getItem(id: number) {
-    const item = this.list.find(
-      (i) => {
-        return i.id === id;
-      }
-    );
-    return item;
+    return this.list.find((i) => i.id === id);
   }
 
   editItem (id: number, name: string) {
-    this.list[id] = {
-      id: id,
-      name: name
-    }
+    this.getItem(id).name = name;
   }
 
-  removeItem(id: number) {
-    for (let i = 0; i < this.list.length; i++) {
-      if (this.list[i].id === id ) {
-        this.list.splice(i, 1);
-      }
-    }
+  removeItem(item) {
+    this.list.splice(this.list.indexOf(item), 1);
   }
 
   getList() {
