@@ -21,7 +21,6 @@ export class EditListComponent implements OnInit {
       .subscribe(
         (params: Params) => {
           this.id = +params['id'];
-          console.log(params);
           this.editMode = params['id'] != null;
           this.item = this.storageService.getItem(this.id);
         }

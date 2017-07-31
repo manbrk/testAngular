@@ -19,7 +19,6 @@ export class StorageService {
       return 0;
     }
     this.generatedId = Math.max.apply(Math, this.list.map(list => list.id)) + 1;
-    console.log('new uniqueId is ' + this.generatedId);
     return this.generatedId;
   }
   // return 'id' + Math.random().toString(16).slice(2)

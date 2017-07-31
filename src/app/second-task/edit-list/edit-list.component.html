@@ -1,6 +1,10 @@
 <div class="mdl-grid max-width">
   <div *ngIf="editMode">
-    <label id="name">Item Name: {{item.name}}</label>
+    <label id="name">
+      <h5>
+        {{item.name}}
+      </h5>
+    </label>
   </div>
 
   <input class="mdl-textfield__input" type="text" #itemName>
