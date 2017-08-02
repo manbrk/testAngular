@@ -10,6 +10,7 @@ import {StorageService} from './second-task/storage.service';
 import {RouterModule} from '@angular/router';
 import {appRoutes} from './routes';
 import {EditListComponent} from './second-task/edit-list/edit-list.component';
+import { ThirdTaskComponent } from './third-task/third-task.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {EditListComponent} from './second-task/edit-list/edit-list.component';
     FooterComponent,
     FirstTaskComponent,
     SecondTaskComponent,
-    EditListComponent
+    EditListComponent,
+    ThirdTaskComponent
   ],
   imports: [
     BrowserModule,
