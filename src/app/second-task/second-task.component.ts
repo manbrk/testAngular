@@ -23,12 +23,12 @@ export class SecondTaskComponent implements OnInit {
     this.router.navigate(['add'], {relativeTo: this.route});
   }
 
-  onRemove(id) {
-    this.storageService.removeItem(id);
-  }
-
   onEdit(id) {
     this.router.navigate(['edit', id],  {relativeTo: this.route});
+  }
+
+  onRemove(item) {
+    this.storageService.removeItem(item);
   }
 
 }
