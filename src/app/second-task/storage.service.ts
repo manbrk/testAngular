@@ -4,16 +4,6 @@ import { Injectable } from '@angular/core';
 export class StorageService {
   localStorageListName = 'lst';
   list: {id: number, name: string}[] = [];
-  // list = [
-    // {
-    //   id: 0,
-    //   name: 'some item'
-    // },
-    // {
-    //   id: 1,
-    //   name: 'another item'
-    // },
-  // ];
 
   uniqueId() {
     if (this.list.length === 0) {
@@ -21,7 +11,6 @@ export class StorageService {
     }
     return Math.max.apply(Math, this.list.map(list => list.id)) + 1;
   }
-  // return 'id' + Math.random().toString(16).slice(2)
 
   addItem(name: string) {
     const id = this.uniqueId();
