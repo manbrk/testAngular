@@ -17,7 +17,7 @@
           </thead>
           <tbody>
 
-          <tr *ngFor="let coordinate of coordinates;">
+          <tr *ngFor="let coordinate of table1;">
             <td>{{ coordinate.x }}</td>
             <td>{{ coordinate.y }}</td>
           </tr>
@@ -26,7 +26,7 @@
         </table>
       </div>
 
-      <div class="mdl-tabs__panel" id="table2">
+      <div class="mdl-tabs__panel is-active" id="table2">
         <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
           <thead>
           <tr>
@@ -35,29 +35,16 @@
           </tr>
           </thead>
           <tbody>
-          <tr>
-            <td>X1</td>
-            <td>Y1</td>
+
+          <tr *ngFor="let coordinate of table2;">
+            <td>{{ coordinate.x }}</td>
+            <td>{{ coordinate.y }}</td>
           </tr>
-          <tr>
-            <td>X2</td>
-            <td>Y2</td>
-          </tr>
-          <tr>
-            <td>X3</td>
-            <td>Y3</td>
-          </tr>
-          <tr>
-            <td>X4</td>
-            <td>Y4</td>
-          </tr>
-          <tr>
-            <td>X5</td>
-            <td>Y5</td>
-          </tr>
+
           </tbody>
         </table>
       </div>
+
 
     </div>
 
