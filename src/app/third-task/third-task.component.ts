@@ -6,19 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./third-task.component.css']
 })
 export class ThirdTaskComponent implements OnInit {
-  table1 = [
-    // {x: 1, y: 6},
-    // {x: 2, y: 7},
-    // {x: 3, y: 8},
-    // {x: 4, y: 9},
-    // {x: 5, y: 10},
-  ];
-
+  table1 = [];
   table2 = [];
 
   evenNum = [2, 4, 6, 8, 10];
-
-  constructor() { }
 
   ngOnInit() {
     this.getRandomNoDoubles(this.evenNum);

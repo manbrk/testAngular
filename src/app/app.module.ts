@@ -11,6 +11,7 @@ import {RouterModule} from '@angular/router';
 import {appRoutes} from './routes';
 import {EditListComponent} from './second-task/edit-list/edit-list.component';
 import { ThirdTaskComponent } from './third-task/third-task.component';
+import { GraphComponent } from './third-task/graph/graph.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ThirdTaskComponent } from './third-task/third-task.component';
     FirstTaskComponent,
     SecondTaskComponent,
     EditListComponent,
-    ThirdTaskComponent
+    ThirdTaskComponent,
+    GraphComponent
   ],
   imports: [
     BrowserModule,
