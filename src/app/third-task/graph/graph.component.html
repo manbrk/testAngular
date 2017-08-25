@@ -9,3 +9,17 @@
     x: {{ num.x }} y: {{ num.y }}
   </li>
 </ul>
+
+<div *ngIf="table1.length > 0;">
+  <div style="display: block">
+    <canvas baseChart
+            [datasets]="barChartData"
+            [labels]="barChartLabels"
+            [options]="barChartOptions"
+            [legend]="barChartLegend"
+            [chartType]="barChartType"
+            (chartHover)="chartHovered($event)"
+            (chartClick)="chartClicked($event)"></canvas>
+  </div>
+  <!--<button (click)="randomize()">Update</button>-->
+</div>

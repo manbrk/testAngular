@@ -12,6 +12,7 @@ import {appRoutes} from './routes';
 import {EditListComponent} from './second-task/edit-list/edit-list.component';
 import { ThirdTaskComponent } from './third-task/third-task.component';
 import { GraphComponent } from './third-task/graph/graph.component';
+import { ChartsModule} from 'ng2-charts/ng2-charts';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { GraphComponent } from './third-task/graph/graph.component';
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    ChartsModule
   ],
   providers: [StorageService],
   bootstrap: [AppComponent]
