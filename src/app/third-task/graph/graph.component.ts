@@ -5,44 +5,38 @@ import {Component, Input, OnInit} from '@angular/core';
   templateUrl: './graph.component.html',
   styleUrls: ['./graph.component.css']
 })
-export class GraphComponent {
-  @Input() table1: { x: number, y: number }[];
-  @Input() table2: { x: number, y: number }[];
+export class GraphComponent implements OnInit {
+  @Input() table2: {x: number, y: number}[];
 
-  table1X = this.table1.map( (coord) => coord.x);
-  // table1X = [3, 5, 9, 8, 1];
+  xAxisTable2: number[];
+  yAxisTable2: number[];
 
   public barChartOptions: any = {
     scaleShowVerticalLines: false,
     responsive: true
   };
-  public barChartLabels: number[] = [2, 6, 10, 4, 8];
+  public barChartLabels: string[] = [];
   public barChartType: string = 'bar';
   public barChartLegend: boolean = true;
 
   public barChartData: any[] = [
-    {data: this.table1X, label: 'Series A'},
-    // {data: this.table1X, label: 'Series A'},
-    // {data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B'}
+    {data: [], label: 'Table 2'}
   ];
 
-  // events
-  public chartClicked(e: any): void {
-    console.log(e);
+  ngOnInit() {
+    this.xAxisTable2  = this.table2.map( (x) => x.x );
+    this.yAxisTable2  = this.table2.map( (y) => y.y );
+    this.barChartLabels = this.xAxisTable2.map(String);
+    let data = this.yAxisTable2;
+    let clone = JSON.parse(JSON.stringify(this.barChartData));
+    clone[0].data = data;
+    this.barChartData = clone;
+    /**
+     * (My guess), for Angular to recognize the change in the dataset
+     * it has to change the dataset variable directly,
+     * so one way around it, is to clone the data, change it and then
+     * assign it;
+     */
   }
 
-  public chartHovered(e: any): void {
-    console.log(e);
-  }
 }
-
-// export class GraphComponent implements OnInit {
-//   @Input() table1: { x: number, y: number }[];
-//   @Input() table2: { x: number, y: number }[];
-//
-//   constructor() { }
-//
-//   ngOnInit() {
-//   }
-//
-// }
