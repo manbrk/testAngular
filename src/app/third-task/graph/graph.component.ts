@@ -20,7 +20,7 @@ export class GraphComponent implements OnInit {
   public barChartLegend: boolean = true;
 
   public barChartData: any[] = [
-    {data: [], label: 'Table 2'}
+    {data: [], label: 'graph'}
   ];
 
   ngOnInit() {
