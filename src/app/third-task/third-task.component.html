@@ -1,62 +1,62 @@
 <div class="mdl-grid max-width">
-  <div class="mdl-cell mdl-cell--6-col">
 
-    <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
-      <div class="mdl-tabs__tab-bar">
-        <a href="#table1" class="mdl-tabs__tab is-active">table 1</a>
-        <a href="#table2" class="mdl-tabs__tab">table 2</a>
-      </div>
+  <button class="mdl-button mdl-js-button" (click)="setTable(1)">table 1</button>
+  <button class="mdl-button mdl-js-button" (click)="setTable(2)">table 2</button>
 
-      <div class="mdl-tabs__panel is-active" id="table1">
-        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
-          <thead>
-          <tr>
-            <th class="mdl-data-table__cell--non-numeric">X</th>
-            <th class="mdl-data-table__cell--non-numeric">Y</th>
-          </tr>
-          </thead>
-          <tbody>
+</div>
 
-          <tr *ngFor="let coordinate of table1;">
-            <td>{{ coordinate.x }}</td>
-            <td>{{ coordinate.y }}</td>
-          </tr>
+<div [ngSwitch]="table">
+  <div class="mdl-grid max-width" *ngSwitchCase="1">
+    <div class="mdl-cell mdl-cell--6-col">
+      <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+        <thead>
+        <tr>
+          <th class="mdl-data-table__cell--non-numeric">X</th>
+          <th class="mdl-data-table__cell--non-numeric">Y</th>
+        </tr>
+        </thead>
+        <tbody>
 
-          </tbody>
-        </table>
-      </div>
+        <tr *ngFor="let coordinate of table1;">
+          <td>{{ coordinate.x }}</td>
+          <td>{{ coordinate.y }}</td>
+        </tr>
 
-      <div class="mdl-tabs__panel is-active" id="table2">
-        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
-          <thead>
-          <tr>
-            <th class="mdl-data-table__cell--non-numeric">X</th>
-            <th class="mdl-data-table__cell--non-numeric">Y</th>
-          </tr>
-          </thead>
-          <tbody>
-
-          <tr *ngFor="let coordinate of table2;">
-            <td>{{ coordinate.x }}</td>
-            <td>{{ coordinate.y }}</td>
-          </tr>
-
-          </tbody>
-        </table>
-      </div>
-
-
+        </tbody>
+      </table>
     </div>
-
-
+    <div class="mdl-cell mdl-cell--6-col mdl-shadow--2dp">
+      <app-graph
+        [table2]="table2"
+      ></app-graph>
+    </div>
   </div>
 
-  <div class="mdl-cell mdl-cell--6-col mdl-shadow--2dp">
-    <!--<app-graph></app-graph>-->
-    <app-graph
-      [table2]="table2"
-    ></app-graph>
-  </div>
+  <div class="mdl-grid max-width" *ngSwitchCase="2">
+    <div class="mdl-cell mdl-cell--6-col">
+      <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+        <thead>
+        <tr>
+          <th class="mdl-data-table__cell--non-numeric">X</th>
+          <th class="mdl-data-table__cell--non-numeric">Y</th>
+        </tr>
+        </thead>
+        <tbody>
 
+        <tr *ngFor="let coordinate of table2;">
+          <td>{{ coordinate.x }}</td>
+          <td>{{ coordinate.y }}</td>
+        </tr>
+
+        </tbody>
+      </table>
+    </div>
+    <div class="mdl-cell mdl-cell--6-col mdl-shadow--2dp">
+      <app-graph
+        [table2]="table2"
+      ></app-graph>
+    </div>
   </div>
+</div>
+
 

@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./third-task.component.css']
 })
 export class ThirdTaskComponent implements OnInit {
+  table: number;
+
   table1 = [];
   table2 = [];
   tbl1: any;
@@ -55,6 +57,8 @@ export class ThirdTaskComponent implements OnInit {
     this.tbl2 = JSON.stringify(this.table2);
   }
 
-
+  setTable(num: number) {
+    this.table = num;
+  }
 
 }
