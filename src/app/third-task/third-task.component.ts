@@ -10,8 +10,6 @@ export class ThirdTaskComponent implements OnInit {
 
   table1 = [];
   table2 = [];
-  tbl1: any;
-  tbl2: any;
 
   evenNum = [2, 4, 6, 8, 10];
 
@@ -28,8 +26,6 @@ export class ThirdTaskComponent implements OnInit {
         y: this.getRandom(1, 10)
       });
     }
-
-    this.getJson()
   }
 
   getRandom(min, max) {
@@ -50,11 +46,6 @@ export class ThirdTaskComponent implements OnInit {
     }
 
     return array;
-  }
-
-  getJson() {
-    this.tbl1 = JSON.stringify(this.table1);
-    this.tbl2 = JSON.stringify(this.table2);
   }
 
   setTable(num: number) {
