@@ -6,10 +6,10 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./graph.component.css']
 })
 export class GraphComponent implements OnInit {
-  @Input() table2: {x: number, y: number}[];
+  @Input() table: {x: number, y: number}[];
 
-  xAxisTable2: number[];
-  yAxisTable2: number[];
+  xAxisTable: number[];
+  yAxisTable: number[];
 
   public barChartOptions: any = {
     scaleShowVerticalLines: false,
@@ -24,10 +24,10 @@ export class GraphComponent implements OnInit {
   ];
 
   ngOnInit() {
-    this.xAxisTable2  = this.table2.map( (x) => x.x );
-    this.yAxisTable2  = this.table2.map( (y) => y.y );
-    this.barChartLabels = this.xAxisTable2.map(String);
-    let data = this.yAxisTable2;
+    this.xAxisTable  = this.table.map( (x) => x.x );
+    this.yAxisTable  = this.table.map( (y) => y.y );
+    this.barChartLabels = this.xAxisTable.map(String);
+    let data = this.yAxisTable;
     let clone = JSON.parse(JSON.stringify(this.barChartData));
     clone[0].data = data;
     this.barChartData = clone;
