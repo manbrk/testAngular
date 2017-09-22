@@ -6,7 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./first-task.component.css']
 })
 export class FirstTaskComponent {
-  // for placeholder auto-repeat
   arr = Array;
   num = 9;
 
